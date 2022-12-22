@@ -1,0 +1,38 @@
+.toast-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.toast {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.pilot-container {
+  height: 76vh;
+  overflow-y: scroll;
+  margin: 50px 0;
+}
+
+.pilot-contact {
+  display: flex;
+  justify-content: space-between;
+}
+
+.drone-coordinates,
+.pilot-name,
+.pilot-email,
+.pilot-phone {
+  cursor: pointer;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+.ndz-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
