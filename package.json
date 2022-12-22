@@ -6,9 +6,9 @@
   "scripts": {
     "tsc": "tsc",
     "rm-dist": "rm -rf dist/",
-    "rm-build": "rm -rf build/",
+    "rm-docs": "rm -rf docs/",
     "build-client": "npm run rm-dist && cd ./client && npm run build && cd .. ",
-    "start": "rm -rf build/ && npm run build-client && tsc && node build/index.js",
+    "start": "rm -rf docs/ && npm run build-client && tsc && node docs/index.js",
     "dev": "npm run build-client &&ts-node-dev src/index.ts",
     "lint": "eslint --ext .ts .",
     "test": "echo \"Error: no test specified\" && exit 1"
