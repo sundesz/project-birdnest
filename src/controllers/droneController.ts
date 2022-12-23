@@ -5,6 +5,7 @@ import { dronesIn100m_range } from '../helper';
 import { NextFunction, RequestHandler } from 'express';
 import { toDroneNewEntry, toPilotNewEntry } from '../utils';
 import { IDrone, IDroneResponse, IPilot, IPilotField } from '../types/types';
+import { PORT } from '../config';
 
 let pilotData: IPilot[] = [];
 
@@ -16,7 +17,7 @@ const fetchDroneData = async () => {
 
   try {
     const droneResponse = await axios.get(
-      'http://localhost:5001/birdnest/drones'
+      `http://localhost:${PORT}/birdnest/drones`
     );
     if (droneResponse.status !== 200) return returnParameter;
 
@@ -65,7 +66,7 @@ const fetchPilotData = async (drones: IDrone[]) => {
           newPilotData = { ...isPilotDataExists, drone };
         } else {
           const pilotResponse = await axios.get(
-            `http://localhost:5001/birdnest/pilots/${drone.serialNumber}`
+            `http://localhost:${PORT}/birdnest/pilots/${drone.serialNumber}`
           );
           const jsonData = pilotResponse.data as IPilotField;
 
